@@ -1,23 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Http\Middleware\ApiAuth;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Customer;
-use App\Models\Driver;
-use App\Models\Employee;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Middleware\CustomAuth;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use Dotenv\Dotenv;
+
 class LoginController
 {
     /**
