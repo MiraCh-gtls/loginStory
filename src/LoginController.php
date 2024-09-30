@@ -26,6 +26,10 @@ class LoginController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+    public function index(){
+        return (['status' => '200', 'message' => 'this worked']);
+    }
+
     public function login(Request $request, $authProvider, $url, $sessionDomain)
     {
         $email = $request->input('Email');
