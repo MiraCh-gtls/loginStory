@@ -1,10 +1,13 @@
 <?php
 
+namespace LoginClass;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
-class LoginController
+
+class LoginClass
 {
     /**
      * Handle a login request to the application.
