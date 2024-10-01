@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 
-class LoginClass
+final class LoginClass
 {
     /**
      * Handle a login request to the application.
