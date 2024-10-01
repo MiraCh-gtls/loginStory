@@ -20,10 +20,12 @@ final class LoginClass
         return json_encode($data);
     }
 
-    public static function login(Request $request, $authProvider, $url, $sessionDomain)
+    public static function login(Request $request)
     {
         $email = $request->input('Email');
         $password = $request->input('Password');
+        $sessionDomain = $request->input('SessionDomain');
+        $url = $request->input('URL');
 
         $headers = [
             'Email' => $email,
@@ -50,9 +52,9 @@ final class LoginClass
                     'PasswordInput' => $request->input('Password'),
                 ];
 
-                $authenticatedUser = $authProvider->attempt($credentials, true);
+                // $authenticatedUser = $authProvider->attempt($credentials, true);
 
-                if ($authenticatedUser) {
+                // if ($authenticatedUser) {
                     // Redirect to the intended page with the obtained user
                     $user = null;
                     $TokenHeaders = [
@@ -117,13 +119,11 @@ final class LoginClass
                             $statusCode = 500;
                             return json_encode(['user'=> null, 'request' => $request, 'status' => $statusCode, 'message' => $errorMessage]);
                         }
-
-
-                } else {
-                    $errorMessage = 'Invalid Credentials';
-                    $statusCode = 500;
-                    return json_encode(['user'=> null, 'request' => $request, 'status' => $statusCode, 'message' => $errorMessage]);
-                }
+                // } else {
+                //     $errorMessage = 'Invalid Credentials';
+                //     $statusCode = 500;
+                //     return json_encode(['user'=> null, 'request' => $request, 'status' => $statusCode, 'message' => $errorMessage]);
+                // }
             }
         } else {
             $errorMessage = 'Invalid Credentials';
