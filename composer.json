@@ -1,6 +1,8 @@
 {
     "name": "gtls/loginstory",
     "description": "[]",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "MiraCh"
@@ -8,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "gtls\\": "src/"
+            "gtls\\loginstory\\": ["src"]
         }
     },
     "require": {
