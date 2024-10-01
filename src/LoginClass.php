@@ -1,6 +1,6 @@
 <?php
 
-namespace GTLS\LoginStory;
+namespace gtls\loginstory;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
