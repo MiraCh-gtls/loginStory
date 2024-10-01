@@ -16,7 +16,8 @@ class LoginClass
      * @return \Illuminate\Http\RedirectResponse
      */
     public function index(){
-        return (['status' => '200', 'message' => 'this worked']);
+        $data = (['status' => 200, 'message' => 'Logged in locally. Handle Azure AD login on frontend.']);
+        return json_encode($data);
     }
 
     public function login(Request $request, $authProvider, $url, $sessionDomain)
