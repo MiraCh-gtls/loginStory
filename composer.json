@@ -6,6 +6,11 @@
             "name": "MiraCh"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "gtls\\": "src/"
+        }
+    },
     "require": {
         "laravel/framework": "^10.10"
     }
