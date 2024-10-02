@@ -131,10 +131,10 @@ final class LoginClass
     public function logout(Request $request)
     {
         $parameters = request()->all();
-        $sessionDomain = $parameters['SessionDomain'] ?? '/';
+        $sessionDomain = $parameters['SessionDomain'] ?? '';
         $user = $parameters['CurrentUser'];
         $url = $parameters['URL'];
-
+        // dd($parameters);
         // Retrieve the 'access_token' cookie if available
         $token = $_COOKIE['access_token'] ?? null;
 
@@ -265,7 +265,7 @@ final class LoginClass
         $parameters = request()->all();
         $redirectRoute = $parameters['RedirectRoute'] ?? '/';
         $gtamUrl = $parameters['URL'] ?? '/';
-        
+
         if (session()->has('user')) {
             return redirect()->route($redirectRoute);  // Redirect if session exists
         }
@@ -316,8 +316,8 @@ final class LoginClass
 
     public function sendToken(Request $request){
         $parameters = request()->all();
-        $accessToken = $parameters['accessToken'];
-        $expiresIn = $parameters['expiresOn'] ?? '/';
+        $accessToken = $request->socialiteUser['accessToken'];
+        $expiresIn = $request->socialiteUser['expiresOn'];
         $gtamUrl = $parameters['URL'] ?? '/';
 
         // find the user in the database through API
