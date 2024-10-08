@@ -8,11 +8,6 @@
             "name": "MiraCh"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "gtls\\loginstory\\": ["src"]
-        }
-    },
     "require": {
         "laravel/framework": "^10.10",
         "laravel/socialite": "^5.16"
