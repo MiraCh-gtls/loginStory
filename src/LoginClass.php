@@ -73,21 +73,12 @@ final class LoginClass
                     ->post("$tokenURL" . "Token", $TokenBody);
 
                 $user = $responseData[0];
-                // if($responseData[0]['TypeId'] == 1) // the user is a customer
-                // {
-                //     $user = new Customer($responseData[0]);
-                // }else if($responseData[0]['TypeId'] == 2) // the user is an employee
-                // {
-                //     $user = new Employee($responseData[0]);
-                // }
-                // else{ // the user is a driver
-                //     $user = new Driver($responseData[0]);
-                // }
+                
                 if ($tokenRes->successful()) {
                     $token = $tokenRes->json();
                     $cookieName = 'access_token';
                     $cookieValue = $token['access_token'];
-                    setcookie($name, '', 1, '/', $sessionDomain, true);
+                    setcookie($cookieName, $cookieValue, 1, '/', $sessionDomain, true);
                     $userId = $user['UserId'];
                     $request->session()->regenerate();
                     $request->session()->put('user', $user);
