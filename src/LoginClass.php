@@ -50,7 +50,7 @@ final class LoginClass
 
                 $credentials = [
                     'EmailInput' => $request->input('Email'),
-                    'EmailDb' => $responseData[0]['Email'],
+                    'EmailDb' => $responseData[0]['Username'],
                     'PasswordDb' => $responseData[0]['UserId'],
                     'PasswordInput' => $request->input('Password'),
                 ];
